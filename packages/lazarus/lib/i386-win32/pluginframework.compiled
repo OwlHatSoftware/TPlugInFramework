@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Lazarus Version="3.2"/>
+  <Compiler Value="C:\lazarus\fpc\bin\i386-win32\fpc.exe" Date="1490128690"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FuC:\Users\JaccoUijlenhoet\Documents\GitHub\TPlugInFramework\src -FuC:\lazarus\lazarus\packager\units\i386-win32 -FuC:\Users\JaccoUijlenhoet\Documents\GitHub\TPlugInFramework\packages\lazarus\ -FUC:\Users\JaccoUijlenhoet\Documents\GitHub\TPlugInFramework\packages\lazarus\lib\i386-win32\ pluginframework.pas"/>
+</CONFIG>

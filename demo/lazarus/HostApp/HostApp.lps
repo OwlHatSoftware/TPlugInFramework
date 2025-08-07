@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="HostApp.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="97" Y="20"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="MainForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="44"/>
+        <CursorPos X="32" Y="88"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\Shared\plugin.interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="15" Y="8"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="15" Y="7"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="19"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="12">
+      <Position>
+        <Filename Value="HostApp.lpr"/>
+        <Caret Line="13" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="MainForm.pas"/>
+        <Caret Line="22" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="MainForm.pas"/>
+        <Caret Line="50" Column="3" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="11" Column="6"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="31" Column="59" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="11" Column="6"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="25" Column="45"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="21" Column="34"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="8"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\src\plugin.framework.pas"/>
+        <Caret Line="29" Column="45"/>
+      </Position>
+      <Position>
+        <Filename Value="MainForm.pas"/>
+        <Caret Line="28" Column="53"/>
+      </Position>
+      <Position>
+        <Filename Value="HostApp.lpr"/>
+        <Caret Line="38" Column="11"/>
+      </Position>
+      <Position>
+        <Filename Value="HostApp.lpr"/>
+        <Caret Line="30" Column="55"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

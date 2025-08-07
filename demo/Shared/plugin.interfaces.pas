@@ -3,6 +3,10 @@ unit plugin.interfaces;
 
 interface
 
+{$IFDEF FPC}
+{$mode delphi}
+{$ENDIF}
+
 type
   IPlugin = interface
     ['{9D765E88-6B29-4D5D-8F3E-7787F6C31234}']

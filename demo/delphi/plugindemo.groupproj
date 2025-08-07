@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E02F9497-5B99-43EA-9278-042D886A18BF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="HostApp\HostApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DLL\PluginDLL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HostApp">
+        <MSBuild Projects="HostApp\HostApp.dproj"/>
+    </Target>
+    <Target Name="HostApp:Clean">
+        <MSBuild Projects="HostApp\HostApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HostApp:Make">
+        <MSBuild Projects="HostApp\HostApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PluginDLL">
+        <MSBuild Projects="DLL\PluginDLL.dproj"/>
+    </Target>
+    <Target Name="PluginDLL:Clean">
+        <MSBuild Projects="DLL\PluginDLL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PluginDLL:Make">
+        <MSBuild Projects="DLL\PluginDLL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HostApp;PluginDLL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HostApp:Clean;PluginDLL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HostApp:Make;PluginDLL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
