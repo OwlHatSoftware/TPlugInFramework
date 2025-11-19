@@ -1,4 +1,4 @@
-library PluginDLL;
+library PluginDLL1;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -18,15 +18,14 @@ library PluginDLL;
 uses
   System.SysUtils,
   System.Classes,
-  plugin.impl in 'plugin.impl.pas',
-  plugin.interfaces in '..\Shared\plugin.interfaces.pas',
-  plugin.framework in '..\..\src\plugin.framework.pas';
+  plugin1.impl in 'plugin1.impl.pas',
+  plugin.interfaces in '..\..\Shared\plugin.interfaces.pas';
 
 {$R *.res}
 
 exports
   GetPlugin,
-  FreePlugIn;
+  FreeHost;
 
 begin
 end.

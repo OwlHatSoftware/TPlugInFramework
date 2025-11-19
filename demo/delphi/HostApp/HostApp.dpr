@@ -3,30 +3,11 @@ program HostApp;
 uses
   Vcl.Forms,
   MainForm in 'MainForm.pas' {Form1},
-  plugin.interfaces in '..\Shared\plugin.interfaces.pas',
-  plugin.framework in '..\..\src\plugin.framework.pas';
+  plugin.interfaces in '..\..\Shared\plugin.interfaces.pas';
 
 {$R *.res}
 
-type
-  THost = class(TInterfacedObject, IHost)
-  public
-    procedure SetSpeedButton(AName: PChar); stdcall;
-  end;
 
-function GetHost: IHost; stdcall;
-begin
-  Result := THost.Create;
-end;
-
-{ THost }
-
-procedure THost.SetSpeedButton(AName: PChar);
-begin
-  if Form1 = nil then
-    Exit;
-  Form1.AddButtonToToolbar(Form1.ToolBar1, AName);
-end;
 
 exports
   GetHost;

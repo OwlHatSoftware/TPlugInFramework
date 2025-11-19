@@ -6,7 +6,10 @@
         <Projects Include="HostApp\HostApp.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DLL\PluginDLL.dproj">
+        <Projects Include="DLL1\PluginDLL1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DLL2\PluginDLL2.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -26,23 +29,32 @@
     <Target Name="HostApp:Make">
         <MSBuild Projects="HostApp\HostApp.dproj" Targets="Make"/>
     </Target>
-    <Target Name="PluginDLL">
-        <MSBuild Projects="DLL\PluginDLL.dproj"/>
+    <Target Name="PluginDLL1">
+        <MSBuild Projects="DLL1\PluginDLL1.dproj"/>
     </Target>
-    <Target Name="PluginDLL:Clean">
-        <MSBuild Projects="DLL\PluginDLL.dproj" Targets="Clean"/>
+    <Target Name="PluginDLL1:Clean">
+        <MSBuild Projects="DLL1\PluginDLL1.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="PluginDLL:Make">
-        <MSBuild Projects="DLL\PluginDLL.dproj" Targets="Make"/>
+    <Target Name="PluginDLL1:Make">
+        <MSBuild Projects="DLL1\PluginDLL1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PluginDLL2">
+        <MSBuild Projects="DLL2\PluginDLL2.dproj"/>
+    </Target>
+    <Target Name="PluginDLL2:Clean">
+        <MSBuild Projects="DLL2\PluginDLL2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PluginDLL2:Make">
+        <MSBuild Projects="DLL2\PluginDLL2.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="HostApp;PluginDLL"/>
+        <CallTarget Targets="HostApp;PluginDLL1;PluginDLL2"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HostApp:Clean;PluginDLL:Clean"/>
+        <CallTarget Targets="HostApp:Clean;PluginDLL1:Clean;PluginDLL2:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HostApp:Make;PluginDLL:Make"/>
+        <CallTarget Targets="HostApp:Make;PluginDLL1:Make;PluginDLL2:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

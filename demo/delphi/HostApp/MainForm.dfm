@@ -42,6 +42,5 @@ object Form1: TForm1
     Caption = 'ToolBar1'
     ShowCaptions = True
     TabOrder = 1
-    ExplicitWidth = 618
   end
 end
