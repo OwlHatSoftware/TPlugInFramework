@@ -26,6 +26,9 @@ type
     procedure FreePlugIn(const ALibName, AFuncName: string);
   end;
 
+var
+  PlugInFrameWork: TPlugInFrameWork;
+
 implementation
 
 { TPlugInFrameWork }
@@ -63,8 +66,8 @@ begin
         end;
       end;
     end;
-    FreeLibrary(LibHandle);
-    LibHandle := 0;
+    // FreeLibrary(LibHandle);
+    // LibHandle := 0;
   end;
 end;
 
@@ -112,5 +115,15 @@ begin
     LibHandleDic.Remove(ALibName);
   end;
 end;
+
+initialization
+
+if not Assigned(PlugInFrameWork) then
+  PlugInFrameWork := TPlugInFrameWork.Create;
+
+finalization
+
+if Assigned(PlugInFrameWork) then
+  PlugInFrameWork.Free;
 
 end.
