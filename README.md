@@ -12,7 +12,8 @@ Plugins in libraries (`.dll`, `.so`) for Free Pascal and Lazarus applications bu
 It hears about the selection, and every command it runs gets the context of the moment, such as the
 selected activity.
 
-It builds with FPC 3.2.2 and Lazarus 4.8 for i386-win32. Fresnel, ohsRibbon, ohsMultiGrid and
+It builds with FPC 3.2.2 for Windows (i386-win32) and Linux (x86_64-linux); macOS is prepared but
+untested (see [Platforms](#platforms)). Fresnel, ohsRibbon, ohsMultiGrid and
 ohsGanttComponents are expected next to this repository, with the Fresnel changes those packages need.
 
 ## How it works
@@ -188,16 +189,38 @@ The Home tab of the demo unloads and loads the plugins again.
 
 ## Build
 
+On Windows:
+
 ```powershell
 .\build.ps1
 ```
 
-This builds the five packages, the plugins, the demo and the tests, runs `test\testframework.exe`
-and the demo's `--selftest`, and must end with `BUILD OK, TESTS PASSED`. It registers the packages
-in a copy of the Lazarus configuration under `out\lazcfg`, not in the one of the IDE; pass
-`-LazarusConfig` to use your own. The demo is `demo\fresnel\out\i386-win32\ohsplugindemo.exe`.
+On Linux and macOS:
 
-`ohsplugindemo.exe --capture=shot.png --tab=Plugins` writes a screenshot.
+```bash
+./build.sh
+```
+
+Both build the five packages, the plugins, the demo and the tests, run `test/testframework` and the
+demo's `--selftest`, and must end with `BUILD OK, TESTS PASSED`. They register the packages in a
+Lazarus configuration of their own under `out/`, not in the one of the IDE (`build.ps1` takes
+`-LazarusConfig` to use yours). The demo is `demo/fresnel/out/<cpu>-<os>/ohsplugindemo`, with the
+plugins in `plugins/` beside it: `hello.dll` on Windows, `libhello.so` on Linux, `libhello.dylib` on
+macOS. The manager loads whatever has the platform's library extension.
+
+`build.sh` expects the libraries in `../../lazarus_libraries` as on Windows; set `LIBS_DIR` (or
+`FRESNEL_DIR`, `RIBBON_DIR`, `MULTIGRID_DIR`, `GANTT_DIR`) when they are elsewhere. Without a
+display it skips the demo self test.
+
+`ohsplugindemo --capture=shot.png --tab=Plugins` writes a screenshot.
+
+### Platforms
+
+| Target | Status |
+| --- | --- |
+| i386-win32 | Built and tested: FPC 3.2.2, Lazarus 4.8 |
+| x86_64-linux | Built and tested: FPC 3.2.2, Lazarus 4.4, GTK3, in WSL with WSLg |
+| macOS (x86_64, aarch64) | Not built or tested yet. Fresnel uses Cocoa with Skia there and does not ship `libsk4d.dylib`: build one and point `SKIA_LIB` at it |
 
 ## Limits
 
@@ -208,6 +231,6 @@ in a copy of the Lazarus configuration under `out\lazcfg`, not in the one of the
   styled by `cOhsPluginCSS`, and plugin buttons keep their order by being moved to the end.
 - Plugins and host must use the same `OHS_PLUGIN_API_VERSION`.
 - All calls happen on the UI thread.
-- Only FPC on i386-win32 is built and tested. The code uses `dynlibs` and has no Windows-only calls,
-  but Linux has not been tried.
+- macOS is untested, see Platforms. The framework itself has no platform-specific code: libraries
+  load through `dynlibs`, and the plugin API is the same on every platform.
 - Delphi is no longer supported: the previous `TPlugInFramework` demos for Delphi were removed.

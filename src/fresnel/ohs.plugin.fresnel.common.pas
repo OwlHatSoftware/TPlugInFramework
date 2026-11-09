@@ -262,18 +262,19 @@ begin
   // unregisters, which removes the controls, while the watcher still listens
   inherited Destroy;
   TOhsWatcher(FWatcher).FAdapter:=nil;
-  FWatcher.Free;
+  // freeing it also drops every free notification it had
+  FreeAndNil(FWatcher);
 end;
 
 procedure TOhsFresnelAdapter.Watch(aComponent: TComponent);
 begin
-  if aComponent<>nil then
+  if (aComponent<>nil) and (FWatcher<>nil) then
     aComponent.FreeNotification(FWatcher);
 end;
 
 procedure TOhsFresnelAdapter.Unwatch(aComponent: TComponent);
 begin
-  if aComponent<>nil then
+  if (aComponent<>nil) and (FWatcher<>nil) then
     aComponent.RemoveFreeNotification(FWatcher);
 end;
 

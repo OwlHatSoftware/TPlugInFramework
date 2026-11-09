@@ -211,6 +211,7 @@ var
   lRegistry: TOhsUIRegistry;
   lManager: TOhsPluginManager;
   lToolbar: TFakeAdapter;
+  lHello: TOhsLoadedPlugin;
 begin
   lRegistry:=TOhsUIRegistry.Create;
   lManager:=TOhsPluginManager.Create(lRegistry);
@@ -218,10 +219,12 @@ begin
   try
     lRegistry.RegisterAdapter(lToolbar);
     Check(lManager.LoadFromDirectory(aDir)=2,'two plugin libraries load: '+lManager.LastError);
-    Check(lManager.FindPlugin('com.owlhat.demo.hello')<>nil,'hello plugin found by id');
+    lHello:=lManager.FindPlugin('com.owlhat.demo.hello');
+    Check(lHello<>nil,'hello plugin found by id');
     Check(lToolbar.Shown.Count=3,'hello plugin put three items on the toolbar');
     Check(lRegistry.Count>3,'and kept the others for locations to come');
-    Check(lManager.LoadPlugin(IncludeTrailingPathDelimiter(aDir)+'hello.dll')=nil,'loading it twice is refused');
+    if lHello<>nil then
+      Check(lManager.LoadPlugin(lHello.FileName)=nil,'loading it twice is refused');
     Check(lManager.LoadPlugin(ParamStr(0))=nil,'a library without the entry point is refused');
     lManager.UnloadAll;
     Check((lRegistry.Count=0) and (lToolbar.Shown.Count=0),'libraries unloaded cleanly');
