@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="ohspluginframework"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="OwlHat Software"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\..\src\core"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\ohspluginframework"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="ohsPluginFramework core: the plugin API, helpers for plugins, the UI registry and the plugin loader. FCL only."/>
+    <License Value="See LICENSE"/>
+    <Version Major="1"/>
+    <Files>
+      <Item>
+        <Filename Value="..\..\src\core\ohs.plugin.api.pas"/>
+        <UnitName Value="ohs.plugin.api"/>
+      </Item>
+      <Item>
+        <Filename Value="..\..\src\core\ohs.plugin.helpers.pas"/>
+        <UnitName Value="ohs.plugin.helpers"/>
+      </Item>
+      <Item>
+        <Filename Value="..\..\src\core\ohs.plugin.registry.pas"/>
+        <UnitName Value="ohs.plugin.registry"/>
+      </Item>
+      <Item>
+        <Filename Value="..\..\src\core\ohs.plugin.manager.pas"/>
+        <UnitName Value="ohs.plugin.manager"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

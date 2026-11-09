@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="ohspluginframework_fresnel"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="OwlHat Software"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\..\src\fresnel"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\ohspluginframework_fresnel"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="ohsPluginFramework adapters for standard Fresnel controls: toolbars, menus and panels."/>
+    <License Value="See LICENSE"/>
+    <Version Major="1"/>
+    <Files>
+      <Item>
+        <Filename Value="..\..\src\fresnel\ohs.plugin.fresnel.common.pas"/>
+        <UnitName Value="ohs.plugin.fresnel.common"/>
+      </Item>
+      <Item>
+        <Filename Value="..\..\src\fresnel\ohs.plugin.fresnel.panels.pas"/>
+        <UnitName Value="ohs.plugin.fresnel.panels"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="ohspluginframework"/>
+      </Item>
+      <Item>
+        <PackageName Value="FresnelBase"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

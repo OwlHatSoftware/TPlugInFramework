@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="ohspluginframework_multigrid"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="OwlHat Software"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\..\src\multigrid"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\ohspluginframework_multigrid"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="ohsPluginFramework adapter for ohsMultiGrid: plugin columns and grid context."/>
+    <License Value="See LICENSE"/>
+    <Version Major="1"/>
+    <Files>
+      <Item>
+        <Filename Value="..\..\src\multigrid\ohs.plugin.fresnel.multigrid.pas"/>
+        <UnitName Value="ohs.plugin.fresnel.multigrid"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="ohspluginframework_fresnel"/>
+      </Item>
+      <Item>
+        <PackageName Value="pkg_multigrid_fresnel"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

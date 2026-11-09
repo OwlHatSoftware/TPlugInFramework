@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="ohspluginframework_ribbon"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="OwlHat Software"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\..\src\ribbon"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\ohspluginframework_ribbon"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="ohsPluginFramework adapter for ohsRibbon."/>
+    <License Value="See LICENSE"/>
+    <Version Major="1"/>
+    <Files>
+      <Item>
+        <Filename Value="..\..\src\ribbon\ohs.plugin.fresnel.ribbon.pas"/>
+        <UnitName Value="ohs.plugin.fresnel.ribbon"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="ohspluginframework_fresnel"/>
+      </Item>
+      <Item>
+        <PackageName Value="ohsribbon"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
